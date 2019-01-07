@@ -43,11 +43,8 @@ public class Menu {
     }
 
     public static void dogMenu() {
-        Dog dog = new Dog();
-
         Scanner input = new Scanner(System.in);
         int userChoice;
-        String dogName;
 
         do {
             System.out.println("Dog Menu \n");
@@ -63,38 +60,7 @@ public class Menu {
             switch (userChoice) {
 
                 case 1:
-                    Dog tempDog = new Dog();
-
-                    System.out.println("Please enter dog's name.\n");
-                    input.nextLine();
-                    dogName = input.nextLine();
-                    tempDog.setDogName(dogName);
-                    tempDog.setUID();
-                    System.out.println("Enter Dog groups\n");
-                    System.out.println("Is " + dogName + " in Group A?");
-                    boolean groupA = input.nextBoolean();
-                    tempDog.setGroup(groupA);
-                    System.out.println("Is " + dogName + " in Group B?\n");
-                    boolean groupB = input.nextBoolean();
-                    tempDog.setGroup(groupB);
-                    System.out.println("Is " + dogName + " in Group C?\n");
-                    boolean groupC = input.nextBoolean();
-                    tempDog.setGroup(groupC);
-                    System.out.println("Is " + dogName + " in Noah's Group?\n");
-                    boolean groupN = input.nextBoolean();
-                    tempDog.setGroup(groupN);
-                    System.out.println("Is " + dogName + " in Smalls Group?\n");
-                    boolean groupSmalls = input.nextBoolean();
-                    tempDog.setGroup(groupSmalls);
-                    System.out.println("Is " + dogName + " in Solo/Pair?\n");
-                    boolean groupSolo = input.nextBoolean();
-                    tempDog.setGroup(groupSolo);
-                    Playgroup.setGroups(tempDog);
-                    System.out.println("Does " + dogName + " have any allergies?\n");
-                    boolean hasAllergy = input.nextBoolean();
-                    tempDog.setAllergy(hasAllergy);
-
-                    DogList.addDogList(tempDog);
+                    newDog();
                     break;
 
                 case 2:
@@ -143,6 +109,43 @@ public class Menu {
 
     public static void allergyMenu() {
 
+    }
+
+    public static void newDog() {
+        Scanner input = new Scanner(System.in);
+        String dogName;
+
+        Dog tempDog = new Dog();
+
+        System.out.println("Please enter dog's name.\n");
+        dogName = input.nextLine();
+        tempDog.setDogName(dogName);
+        tempDog.setUID();
+        System.out.println("Enter Dog groups\n");
+        System.out.println("Is " + dogName + " in Group A?");
+        boolean groupA = input.nextBoolean();
+        tempDog.setGroup(groupA);
+        System.out.println("Is " + dogName + " in Group B?\n");
+        boolean groupB = input.nextBoolean();
+        tempDog.setGroup(groupB);
+        System.out.println("Is " + dogName + " in Group C?\n");
+        boolean groupC = input.nextBoolean();
+        tempDog.setGroup(groupC);
+        System.out.println("Is " + dogName + " in Noah's Group?\n");
+        boolean groupN = input.nextBoolean();
+        tempDog.setGroup(groupN);
+        System.out.println("Is " + dogName + " in Smalls Group?\n");
+        boolean groupSmalls = input.nextBoolean();
+        tempDog.setGroup(groupSmalls);
+        System.out.println("Is " + dogName + " in Solo/Pair?\n");
+        boolean groupSolo = input.nextBoolean();
+        tempDog.setGroup(groupSolo);
+        Playgroup.setGroups(tempDog);
+        System.out.println("Does " + dogName + " have any allergies?\n");
+        boolean hasAllergy = input.nextBoolean();
+        tempDog.setAllergy(hasAllergy);
+
+        DogList.addDogList(tempDog);
     }
 
 
