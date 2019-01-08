@@ -35,7 +35,7 @@ public class Menu {
                     break;
 
                     default:
-                        System.out.println(userChoice + " is not a valid Menu option! Please select another.");
+                        defaultString(userChoice);
                         break;
             }
         } while(userChoice != 0);
@@ -92,7 +92,7 @@ public class Menu {
                     break;
 
                 default:
-                    System.out.println(userChoice + " is not a valid Menu option! Please select another.");
+                    defaultString(userChoice);
                     break;
             }
         } while(userChoice != 0);
@@ -168,6 +168,11 @@ public class Menu {
             System.out.println(DogList.dogList.get(i));
         input.nextLine();
     }
+
+    static void defaultString(int userChoice) {
+        System.out.println(userChoice + " is not a valid Menu option! Please select another.");
+    }
+
     static void exitApp() {
         System.out.println("Exiting program...\n");
         System.exit(0);
