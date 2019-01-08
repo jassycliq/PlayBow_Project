@@ -31,8 +31,7 @@ public class Menu {
                     break;
 
                 case 0:
-                    System.out.println("Exiting program...\n");
-                    System.exit(0);
+                    exitApp();
                     break;
 
                     default:
@@ -92,8 +91,7 @@ public class Menu {
                     break;
 
                 case 0:
-                    System.out.println("Exiting program...\n");
-                    System.exit(0);
+                    exitApp();
                     break;
 
                 default:
@@ -166,5 +164,8 @@ public class Menu {
         DogList.addDogList(tempDog);
     }
 
-
+    static void exitApp() {
+        System.out.println("Exiting program...\n");
+        System.exit(0);
+    }
 }
