@@ -108,6 +108,29 @@ class Menu {
             switch (userChoice) {
 
                 case 1:
+                    addToGroup();
+                    break;
+
+                case 2:
+                    removeFromGroup();
+                    break;
+
+                case 3:
+                    displayGroup();
+                    break;
+
+                case 4:
+                    System.out.println("Opening Main Menu...\n");
+                    menu();
+                    break;
+
+                case 0:
+                    exitApp();
+                    break;
+
+                default:
+                    defaultString(userChoice);
+                    break;
 
             }
         } while(userChoice != 0);
