@@ -63,7 +63,7 @@ public class Menu {
                     break;
 
                 case 2:
-                    DogList.dogList.removeIf(Dog -> Dog.getDogName().equals(input.nextLine()));
+                    deleteDog();
                     // To-do: Implement a method to delete dogs by name.... May have to reimplement way
                     break;
 
@@ -152,6 +152,12 @@ public class Menu {
         tempDog.setAllergy(hasAllergy);
 
         DogList.addDogList(tempDog);
+    }
+
+    static void deleteDog() {
+        Scanner input = new Scanner(System.in);
+
+        DogList.dogList.removeIf(Dog -> Dog.getDogName().equals(input.nextLine()));
     }
 
     static void displayDogs() {
