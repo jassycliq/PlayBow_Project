@@ -68,10 +68,7 @@ public class Menu {
                     break;
 
                 case 3:
-                    for (int i = 0; i < DogList.dogList.size(); i++)
-                    System.out.println(DogList.dogList.get(i));
-                    input.nextLine();
-                    input.nextLine();
+                    displayDogs();
                     break;
 
                 case 4:
@@ -164,6 +161,13 @@ public class Menu {
         DogList.addDogList(tempDog);
     }
 
+    static void displayDogs() {
+        Scanner input = new Scanner(System.in);
+
+        for (int i = 0; i < DogList.dogList.size(); i++)
+            System.out.println(DogList.dogList.get(i));
+        input.nextLine();
+    }
     static void exitApp() {
         System.out.println("Exiting program...\n");
         System.exit(0);
