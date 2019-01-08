@@ -8,7 +8,7 @@ public class Menu {
         int userChoice;
 
         do {
-            System.out.println("Playbow App Main Menu \n");
+            System.out.println("\nPlaybow App Main Menu \n");
             System.out.println("1) Dog Menu\n");
             System.out.println("2) Group Menu\n");
             System.out.println("3) Allergy Menu\n");
