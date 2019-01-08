@@ -104,7 +104,25 @@ public class Menu {
     }
 
     public static void groupMenu() {
+        Scanner input = new Scanner(System.in);
+        int userChoice;
 
+        do {
+            System.out.println("Group Menu \n");
+            System.out.println("1) Add Dog To Group\n");
+            System.out.println("2) Remove Dog From Group\n");
+            System.out.println("3) Display Group List\n");
+            System.out.println("4) Main Menu\n");
+            System.out.println("0) Exit Program\n");
+            System.out.println("Please Enter Your Choice\n");
+
+            userChoice = input.nextInt();
+            switch (userChoice) {
+
+                case 1:
+
+            }
+        } while(userChoice != 0);
     }
 
     public static void allergyMenu() {
