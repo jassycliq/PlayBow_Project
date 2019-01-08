@@ -1,7 +1,6 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Dog implements Serializable {
+public class Dog {
     // Display name for dog
     private String dogName;
 

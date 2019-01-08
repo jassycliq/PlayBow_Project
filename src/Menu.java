@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 class Menu {
@@ -140,6 +138,15 @@ class Menu {
 
     }
 
+    private static void defaultString(int userChoice) {
+        System.out.println(userChoice + " is not a valid Menu option! Please select another.");
+    }
+
+    private static void exitApp() {
+        System.out.println("Exiting program...\n");
+        System.exit(0);
+    }
+
     private static void newDog() {
         Scanner input = new Scanner(System.in);
         String dogName;
@@ -203,12 +210,5 @@ class Menu {
         }
     }
 
-    private static void defaultString(int userChoice) {
-        System.out.println(userChoice + " is not a valid Menu option! Please select another.");
-    }
 
-    private static void exitApp() {
-        System.out.println("Exiting program...\n");
-        System.exit(0);
-    }
 }
