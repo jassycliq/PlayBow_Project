@@ -72,14 +72,7 @@ public class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Which dog's info do you want?\n");
-                    input.nextLine();
-                    String dogChoice = input.nextLine();
-                    for (int i = 0; i < DogList.dogList.size(); i++) {
-                        if (DogList.dogList.get(i).getDogName().equalsIgnoreCase(dogChoice)) {
-                            DogList.dogList.get(i).getInfo();
-                        }
-                    }
+                    dogInfo();
                     break;
 
                 case 5:
@@ -167,6 +160,18 @@ public class Menu {
         for (int i = 0; i < DogList.dogList.size(); i++)
             System.out.println(DogList.dogList.get(i));
         input.nextLine();
+    }
+
+    static void dogInfo() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Which dog's info do you want?\n");
+        String dogChoice = input.nextLine();
+        for (int i = 0; i < DogList.dogList.size(); i++) {
+            if (DogList.dogList.get(i).getDogName().equalsIgnoreCase(dogChoice)) {
+                DogList.dogList.get(i).getInfo();
+            }
+        }
     }
 
     static void defaultString(int userChoice) {
