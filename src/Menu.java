@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Menu {
-    public static void menu() {
+class Menu {
+    static void menu() {
         Scanner input = new Scanner(System.in);
         int userChoice;
 
@@ -41,7 +41,7 @@ public class Menu {
         } while(userChoice != 0);
     }
 
-    public static void dogMenu() {
+    private static void dogMenu() {
         Scanner input = new Scanner(System.in);
         int userChoice;
 
@@ -91,7 +91,7 @@ public class Menu {
         } while(userChoice != 0);
     }
 
-    public static void groupMenu() {
+    private static void groupMenu() {
         Scanner input = new Scanner(System.in);
         int userChoice;
 
@@ -113,11 +113,11 @@ public class Menu {
         } while(userChoice != 0);
     }
 
-    public static void allergyMenu() {
+    private static void allergyMenu() {
 
     }
 
-    public static void newDog() {
+    private static void newDog() {
         Scanner input = new Scanner(System.in);
         String dogName;
 
@@ -154,13 +154,13 @@ public class Menu {
         DogList.addDogList(tempDog);
     }
 
-    static void deleteDog() {
+    private static void deleteDog() {
         Scanner input = new Scanner(System.in);
 
         DogList.dogList.removeIf(Dog -> Dog.getDogName().equals(input.nextLine()));
     }
 
-    static void displayDogs() {
+    private static void displayDogs() {
         Scanner input = new Scanner(System.in);
 
         for (int i = 0; i < DogList.dogList.size(); i++)
@@ -168,7 +168,7 @@ public class Menu {
         input.nextLine();
     }
 
-    static void dogInfo() {
+    private static void dogInfo() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Which dog's info do you want?\n");
@@ -180,11 +180,11 @@ public class Menu {
         }
     }
 
-    static void defaultString(int userChoice) {
+    private static void defaultString(int userChoice) {
         System.out.println(userChoice + " is not a valid Menu option! Please select another.");
     }
 
-    static void exitApp() {
+    private static void exitApp() {
         System.out.println("Exiting program...\n");
         System.exit(0);
     }
