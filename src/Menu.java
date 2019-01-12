@@ -228,7 +228,6 @@ class Menu {
         }
 
         if (dogFound) {
-            System.out.println(tempDog.getGroupString());
             System.out.println("Which group do you want to add " + tempDog + " to?");
             int userChoice;
 
