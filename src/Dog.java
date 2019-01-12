@@ -43,8 +43,12 @@ public class Dog {
         this.uid = newUID();
     }
 
-    public void setGroup(boolean x) {
-        this.group.add(x);
+    public void setGroup(boolean dogBoolean, int group) {
+        this.group.add(group, dogBoolean);
+    }
+
+    public void removeGroup(int group) {
+        this.group.remove(group);
     }
 
     public ArrayList<Boolean> getGroup() {

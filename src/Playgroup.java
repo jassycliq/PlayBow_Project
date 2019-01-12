@@ -55,35 +55,29 @@ class Playgroup {
         setGroupSolo(dog);
         System.out.println("Groups set for: " + dog.getDogName());
     }
+
     public static void setGroupA(Dog dog) {
-        if (dog.getGroup().get(0)) {
             groupA.add(dog);
-        }
     }
 
     public static void setGroupB(Dog dog) {
-        if (dog.getGroup().get(1)) {
             groupB.add(dog);
-        }
     }
 
     public static void setGroupC(Dog dog) {
-        if (dog.getGroup().get(2)) {
             groupC.add(dog);
-        }    }
+    }
 
     public static void setGroupN(Dog dog) {
-        if (dog.getGroup().get(3)) {
             groupN.add(dog);
-        }    }
+    }
 
     public static void setGroupSmalls(Dog dog) {
-        if (dog.getGroup().get(4)) {
             groupSmalls.add(dog);
-        }    }
+    }
 
     public static void setGroupSolo(Dog dog) {
-        if (dog.getGroup().get(5)) {
             groupSolo.add(dog);
-        }    }
+
+    }
 }

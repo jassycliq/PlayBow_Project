@@ -110,11 +110,11 @@ class Menu {
                     break;
 
                 case 2:
-                    removeFromGroup();
+                    //removeFromGroup();
                     break;
 
                 case 3:
-                    displayGroup();
+                    //displayGroup();
                     break;
 
                 case 4:
@@ -160,22 +160,22 @@ class Menu {
         System.out.println("Enter Dog groups\n");
         System.out.println("Is " + dogName + " in Group A?");
         boolean groupA = input.nextBoolean();
-        tempDog.setGroup(groupA);
+        tempDog.setGroup(groupA, 0);
         System.out.println("Is " + dogName + " in Group B?\n");
         boolean groupB = input.nextBoolean();
-        tempDog.setGroup(groupB);
+        tempDog.setGroup(groupB, 1);
         System.out.println("Is " + dogName + " in Group C?\n");
         boolean groupC = input.nextBoolean();
-        tempDog.setGroup(groupC);
+        tempDog.setGroup(groupC, 2);
         System.out.println("Is " + dogName + " in Noah's Group?\n");
         boolean groupN = input.nextBoolean();
-        tempDog.setGroup(groupN);
+        tempDog.setGroup(groupN, 3);
         System.out.println("Is " + dogName + " in Smalls Group?\n");
         boolean groupSmalls = input.nextBoolean();
-        tempDog.setGroup(groupSmalls);
+        tempDog.setGroup(groupSmalls, 4);
         System.out.println("Is " + dogName + " in Solo/Pair?\n");
         boolean groupSolo = input.nextBoolean();
-        tempDog.setGroup(groupSolo);
+        tempDog.setGroup(groupSolo, 5);
         Playgroup.setGroups(tempDog);
         System.out.println("Does " + dogName + " have any allergies?\n");
         boolean hasAllergy = input.nextBoolean();
@@ -210,5 +210,104 @@ class Menu {
         }
     }
 
+    private static void addToGroup() {
+        Scanner input = new Scanner(System.in);
+        Dog tempDog = new Dog();
+        boolean dogFound = false;
 
+        System.out.println("Please enter the name of the dog you want to add");
+        String dogInput = input.nextLine();
+
+        for (Dog dog : DogList.dogList) {
+            if (dog.getDogName().equalsIgnoreCase(dogInput)) {
+                System.out.println("Found " + dogInput + "!");
+                tempDog = dog;
+                dogFound = true;
+                break;
+            }
+        }
+
+        if (dogFound) {
+            System.out.println(tempDog.getGroupString());
+            System.out.println("Which group do you want to add " + tempDog + " to?");
+            int userChoice;
+
+            do {
+                System.out.println("1) Group A \n");
+                System.out.println("2) Group B \n");
+                System.out.println("3) Group C \n");
+                System.out.println("4) Noah's Group \n");
+                System.out.println("5) Smalls Group \n");
+                System.out.println("6) Solo/Pair \n");
+                System.out.println("0) Go Back \n");
+                System.out.println("Please Enter Your Choice \n");
+
+                userChoice = input.nextInt();
+                switch (userChoice) {
+
+                    case 1:
+                        tempDog.removeGroup(0);
+                        tempDog.setGroup(true, 0);
+                        break;
+
+                    case 2:
+                        tempDog.removeGroup(1);
+                        tempDog.setGroup(true, 1);
+                        break;
+
+                    case 3:
+                        tempDog.removeGroup(2);
+                        tempDog.setGroup(true,2);
+                        break;
+
+                    case 4:
+                        tempDog.removeGroup(3);
+                        tempDog.setGroup(true, 3);
+                        break;
+
+                    case 5:
+                        tempDog.removeGroup(4);
+                        tempDog.setGroup(true, 4);
+                        break;
+
+                    case 6:
+                        tempDog.removeGroup(5);
+                        tempDog.setGroup(true, 5);
+                        break;
+
+                    case 0:
+                        groupMenu();
+                        break;
+
+                    default:
+                        defaultString(userChoice);
+                        break;
+                }
+            } while (userChoice != 0);
+        } else System.out.println("Could not find " + dogInput + "!");
+    }
+
+    private static void addGroupA(Dog tempDog) {
+        Playgroup.setGroupA(tempDog);
+    }
+
+    private static void addGroupB(Dog tempDog) {
+        Playgroup.setGroupB(tempDog);
+    }
+
+    private static void addGroupC(Dog tempDog) {
+        Playgroup.setGroupC(tempDog);
+    }
+
+    private static void addGroupN(Dog tempDog) {
+        Playgroup.setGroupN(tempDog);
+    }
+
+    private static void addGroupSmalls(Dog tempDog) {
+        Playgroup.setGroupSmalls(tempDog);
+    }
+
+    private static void addGroupSolo(Dog tempDog) {
+        Playgroup.setGroupSolo(tempDog);
+    }
 }
