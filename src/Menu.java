@@ -245,33 +245,27 @@ class Menu {
                 switch (userChoice) {
 
                     case 1:
-                        tempDog.removeGroup(0);
-                        tempDog.setGroup(true, 0);
+                        addGroupA(tempDog);
                         break;
 
                     case 2:
-                        tempDog.removeGroup(1);
-                        tempDog.setGroup(true, 1);
+                        addGroupB(tempDog);
                         break;
 
                     case 3:
-                        tempDog.removeGroup(2);
-                        tempDog.setGroup(true,2);
+                        addGroupC(tempDog);
                         break;
 
                     case 4:
-                        tempDog.removeGroup(3);
-                        tempDog.setGroup(true, 3);
+                        addGroupN(tempDog);
                         break;
 
                     case 5:
-                        tempDog.removeGroup(4);
-                        tempDog.setGroup(true, 4);
+                        addGroupSmalls(tempDog);
                         break;
 
                     case 6:
-                        tempDog.removeGroup(5);
-                        tempDog.setGroup(true, 5);
+                        addGroupSolo(tempDog);
                         break;
 
                     case 0:
@@ -287,26 +281,32 @@ class Menu {
     }
 
     private static void addGroupA(Dog tempDog) {
-        Playgroup.setGroupA(tempDog);
+        tempDog.removeGroup(0);
+        tempDog.setGroup(true, 0);
     }
 
     private static void addGroupB(Dog tempDog) {
-        Playgroup.setGroupB(tempDog);
+        tempDog.removeGroup(1);
+        tempDog.setGroup(true, 1);
     }
 
     private static void addGroupC(Dog tempDog) {
-        Playgroup.setGroupC(tempDog);
+        tempDog.removeGroup(2);
+        tempDog.setGroup(true,2);
     }
 
     private static void addGroupN(Dog tempDog) {
-        Playgroup.setGroupN(tempDog);
+        tempDog.removeGroup(3);
+        tempDog.setGroup(true, 3);
     }
 
     private static void addGroupSmalls(Dog tempDog) {
-        Playgroup.setGroupSmalls(tempDog);
+        tempDog.removeGroup(4);
+        tempDog.setGroup(true, 4);
     }
 
     private static void addGroupSolo(Dog tempDog) {
-        Playgroup.setGroupSolo(tempDog);
+        tempDog.removeGroup(5);
+        tempDog.setGroup(true, 5);
     }
 }
