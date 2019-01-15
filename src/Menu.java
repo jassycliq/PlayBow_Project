@@ -110,7 +110,7 @@ class Menu {
                     break;
 
                 case 2:
-                    //removeFromGroup();
+                    remFromGroup();
                     break;
 
                 case 3:
@@ -210,61 +210,62 @@ class Menu {
         }
     }
 
+    private static Dog findDog(String dogInput) {
+        Dog tempDog = new Dog();
+
+        for (Dog dog : DogList.dogList) {
+            if (dog.getDogName().equalsIgnoreCase(dogInput)) {
+                System.out.println("Found " + dogInput + "! \n");
+                tempDog = dog;
+                break;
+            }
+            else tempDog = null;
+        }
+        return tempDog;
+    }
+
     private static void addToGroup() {
         Scanner input = new Scanner(System.in);
-        Dog tempDog = new Dog();
-        boolean dogFound = false;
 
         System.out.println("Please enter the name of the dog you want to add");
         String dogInput = input.nextLine();
 
-        for (Dog dog : DogList.dogList) {
-            if (dog.getDogName().equalsIgnoreCase(dogInput)) {
-                System.out.println("Found " + dogInput + "!");
-                tempDog = dog;
-                dogFound = true;
-                break;
-            }
-        }
+        Dog tempDog = findDog(dogInput);
 
-        if (dogFound) {
-            System.out.println("Which group do you want to add " + tempDog + " to?");
+        if (tempDog != null) {
+            System.out.println("Which group do you want to add " + tempDog + " to? \n");
             int userChoice;
 
             do {
-                System.out.println("1) Group A \n");
-                System.out.println("2) Group B \n");
-                System.out.println("3) Group C \n");
-                System.out.println("4) Noah's Group \n");
-                System.out.println("5) Smalls Group \n");
-                System.out.println("6) Solo/Pair \n");
-                System.out.println("0) Go Back \n");
-                System.out.println("Please Enter Your Choice \n");
-
-                userChoice = input.nextInt();
+               userChoice = getUserChoice(input);
                 switch (userChoice) {
 
                     case 1:
+                        remGroupA(tempDog);
                         addGroupA(tempDog);
                         break;
 
                     case 2:
+                        remGroupB(tempDog);
                         addGroupB(tempDog);
                         break;
 
                     case 3:
+                        remGroupC(tempDog);
                         addGroupC(tempDog);
                         break;
 
                     case 4:
+                        remGroupN(tempDog);
                         addGroupN(tempDog);
                         break;
 
-                    case 5:
+                    case 5:remGroupSmalls(tempDog);
                         addGroupSmalls(tempDog);
                         break;
 
                     case 6:
+                        remGroupSolo(tempDog);
                         addGroupSolo(tempDog);
                         break;
 
@@ -277,36 +278,121 @@ class Menu {
                         break;
                 }
             } while (userChoice != 0);
-        } else System.out.println("Could not find " + dogInput + "!");
+        } else System.out.println("Could not find " + dogInput + "! \n");
+    }
+
+    private static void remFromGroup() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Please enter the name of the dog you want to remove");
+        String dogInput = input.nextLine();
+
+        Dog tempDog = findDog(dogInput);
+
+        if (tempDog != null) {
+            System.out.println("Which group do you want to remove " + tempDog + " from? \n");
+            int userChoice;
+
+            do {
+                userChoice = getUserChoice(input);
+                switch (userChoice) {
+
+                    case 1:
+                        remGroupA(tempDog);
+                        break;
+
+                    case 2:
+                        remGroupB(tempDog);
+                        break;
+
+                    case 3:
+                        remGroupC(tempDog);
+                        break;
+
+                    case 4:
+                        remGroupN(tempDog);
+                        break;
+
+                    case 5:
+                        remGroupSmalls(tempDog);
+                        break;
+
+                    case 6:
+                        remGroupSolo(tempDog);
+                        break;
+
+                    case 0:
+                        groupMenu();
+                        break;
+
+                    default:
+                        defaultString(userChoice);
+                        break;
+                }
+            } while (userChoice != 0);
+        } else System.out.println("Could not find " + dogInput + "! \n");
+    }
+
+    private static int getUserChoice(Scanner input) {
+        int userChoice;
+        System.out.println("1) Group A \n");
+        System.out.println("2) Group B \n");
+        System.out.println("3) Group C \n");
+        System.out.println("4) Noah's Group \n");
+        System.out.println("5) Smalls Group \n");
+        System.out.println("6) Solo/Pair \n");
+        System.out.println("0) Go Back \n");
+        System.out.println("Please Enter Your Choice \n");
+
+        userChoice = input.nextInt();
+        return userChoice;
     }
 
     private static void addGroupA(Dog tempDog) {
-        tempDog.removeGroup(0);
         tempDog.setGroup(true, 0);
     }
 
+    private static void remGroupA(Dog tempDog) {
+        tempDog.removeGroup(0);
+    }
+
     private static void addGroupB(Dog tempDog) {
-        tempDog.removeGroup(1);
         tempDog.setGroup(true, 1);
     }
 
+    private static void remGroupB(Dog tempDog) {
+        tempDog.removeGroup(1);
+    }
+
     private static void addGroupC(Dog tempDog) {
-        tempDog.removeGroup(2);
         tempDog.setGroup(true,2);
     }
 
+    private static void remGroupC(Dog tempDog) {
+        tempDog.removeGroup(2);
+    }
+
     private static void addGroupN(Dog tempDog) {
-        tempDog.removeGroup(3);
         tempDog.setGroup(true, 3);
     }
 
+    private static void remGroupN(Dog tempDog) {
+        tempDog.removeGroup(3);
+    }
+
     private static void addGroupSmalls(Dog tempDog) {
-        tempDog.removeGroup(4);
         tempDog.setGroup(true, 4);
     }
 
+    private static void remGroupSmalls(Dog tempDog) {
+        tempDog.removeGroup(4);
+    }
+
     private static void addGroupSolo(Dog tempDog) {
-        tempDog.removeGroup(5);
         tempDog.setGroup(true, 5);
+    }
+
+    private static void remGroupSolo(Dog tempDog) {
+        tempDog.removeGroup(5);
     }
 }
