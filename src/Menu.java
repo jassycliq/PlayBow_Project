@@ -1,3 +1,4 @@
+import java.awt.desktop.SystemSleepEvent;
 import java.util.Scanner;
 
 class Menu {
@@ -115,7 +116,7 @@ class Menu {
                     break;
 
                 case 3:
-                    //displayGroup();
+                    displayGroup();
                     break;
 
                 case 4:
@@ -333,6 +334,51 @@ class Menu {
             } while (userChoice != 0);
         } else System.out.println("Could not find " + dogInput + "! \n");
     }
+
+    private static void displayGroup() {
+        Scanner input = new Scanner(System.in);
+        int userChoice;
+
+        System.out.println("Which group do you want to list? \n");
+
+        do {
+            userChoice = getUserChoice(input);
+            switch (userChoice) {
+                case 1:
+                    Playgroup.getGroupA();
+                    break;
+
+                case 2:
+                    Playgroup.getGroupB();
+                    break;
+
+                case 3:
+                    Playgroup.getGroupC();
+                    break;
+
+                case 4:
+                    Playgroup.getGroupN();
+                    break;
+
+                case 5:
+                    Playgroup.getGroupSmalls();
+                    break;
+
+                case 6:
+                    Playgroup.getGroupSolo();
+                    break;
+
+                case 0:
+                    groupMenu();
+                    break;
+
+                default:
+                    defaultString(userChoice);
+                    break;
+                }
+            } while (userChoice != 0);
+        }
+
 
     private static int getUserChoice(Scanner input) {
         int userChoice;

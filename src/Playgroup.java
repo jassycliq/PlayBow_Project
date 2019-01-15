@@ -17,28 +17,40 @@ class Playgroup {
      *  Methods to retrieve Dog names in Playgroups
      */
 
-    public static ArrayList<Dog> getGroupA() {
-        return groupA;
+    public static void getGroupA() {
+        for (Dog tempDog : groupA) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
-    public static ArrayList<Dog> getGroupB() {
-        return groupB;
+    public static void getGroupB() {
+        for (Dog tempDog : groupB) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
-    public static ArrayList<Dog> getGroupC() {
-        return groupC;
+    public static void getGroupC() {
+        for (Dog tempDog : groupC) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
-    public static ArrayList<Dog> getGroupN() {
-        return groupN;
+    public static void getGroupN() {
+        for (Dog tempDog : groupN) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
-    public static ArrayList<Dog> getGroupSmalls() {
-        return groupSmalls;
+    public static void getGroupSmalls() {
+        for (Dog tempDog : groupSmalls) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
-    public static ArrayList<Dog> getGroupSolo() {
-        return groupSolo;
+    public static void getGroupSolo() {
+        for (Dog tempDog : groupSolo) {
+            System.out.println(tempDog.getDogName());
+        }
     }
 
 
@@ -47,12 +59,30 @@ class Playgroup {
      *  Methods to add new Dog objects to Playgroup ArrayLists
      */
     public static void setGroups(Dog dog) {
-        setGroupA(dog);
-        setGroupB(dog);
-        setGroupC(dog);
-        setGroupN(dog);
-        setGroupSmalls(dog);
-        setGroupSolo(dog);
+        if (dog.getGroup().get(0)) {
+            setGroupA(dog);
+        }
+
+        if (dog.getGroup().get(1)) {
+            setGroupB(dog);
+        }
+
+        if (dog.getGroup().get(2)) {
+            setGroupC(dog);
+        }
+
+        if (dog.getGroup().get(3)) {
+            setGroupN(dog);
+        }
+
+        if (dog.getGroup().get(4)) {
+            setGroupSmalls(dog);
+        }
+
+        if (dog.getGroup().get(5)) {
+            setGroupSolo(dog);
+        }
+
         System.out.println("Groups set for: " + dog.getDogName());
     }
 
