@@ -23,8 +23,9 @@ public class Dog {
         System.out.println("Unique Identification is: " + getUID());
         System.out.println(getGroup());
         if (getAllergy()) {
-            System.out.println(getDogName() + " has allergies.");
+            System.out.println(getDogName() + " has allergies.\n");
         }
+        else System.out.println("");
     }
 
     public String getDogName() {
