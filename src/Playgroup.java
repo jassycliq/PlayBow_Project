@@ -17,37 +17,37 @@ class Playgroup {
      *  Methods to retrieve Dog names in Playgroups
      */
 
-    public static void getGroupA() {
+    static void getGroupA() {
         for (Dog tempDog : groupA) {
             System.out.println(tempDog.getDogName());
         }
     }
 
-    public static void getGroupB() {
+    static void getGroupB() {
         for (Dog tempDog : groupB) {
             System.out.println(tempDog.getDogName());
         }
     }
 
-    public static void getGroupC() {
+    static void getGroupC() {
         for (Dog tempDog : groupC) {
             System.out.println(tempDog.getDogName());
         }
     }
 
-    public static void getGroupN() {
+    static void getGroupN() {
         for (Dog tempDog : groupN) {
             System.out.println(tempDog.getDogName());
         }
     }
 
-    public static void getGroupSmalls() {
+    static void getGroupSmalls() {
         for (Dog tempDog : groupSmalls) {
             System.out.println(tempDog.getDogName());
         }
     }
 
-    public static void getGroupSolo() {
+    static void getGroupSolo() {
         for (Dog tempDog : groupSolo) {
             System.out.println(tempDog.getDogName());
         }
@@ -58,7 +58,7 @@ class Playgroup {
     /*
      *  Methods to add new Dog objects to Playgroup ArrayLists
      */
-    public static void setGroups(Dog dog) {
+    static void setGroups(Dog dog) {
         if (dog.getGroup().get(0)) {
             setGroupA(dog);
         }
@@ -86,27 +86,27 @@ class Playgroup {
         System.out.println("Groups set for: " + dog.getDogName());
     }
 
-    public static void setGroupA(Dog dog) {
+    private static void setGroupA(Dog dog) {
             groupA.add(dog);
     }
 
-    public static void setGroupB(Dog dog) {
+    private static void setGroupB(Dog dog) {
             groupB.add(dog);
     }
 
-    public static void setGroupC(Dog dog) {
+    private static void setGroupC(Dog dog) {
             groupC.add(dog);
     }
 
-    public static void setGroupN(Dog dog) {
+    private static void setGroupN(Dog dog) {
             groupN.add(dog);
     }
 
-    public static void setGroupSmalls(Dog dog) {
+    private static void setGroupSmalls(Dog dog) {
             groupSmalls.add(dog);
     }
 
-    public static void setGroupSolo(Dog dog) {
+    private static void setGroupSolo(Dog dog) {
             groupSolo.add(dog);
 
     }

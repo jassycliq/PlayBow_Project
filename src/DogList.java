@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class DogList {
+class DogList {
     static ArrayList<Dog> dogList = new ArrayList<>();
 
     static void addDogList(Dog dog) {
