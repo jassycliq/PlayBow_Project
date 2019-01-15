@@ -9,7 +9,8 @@ class Menu {
             System.out.println("\nPlaybow App Main Menu \n");
             System.out.println("1) Dog Menu\n");
             System.out.println("2) Group Menu\n");
-            System.out.println("3) Allergy Menu\n");
+            //@// TODO: 2019-01-15 Implement a menu for allergies. Not really sure what to do with that menu or if it is beneficial at all
+            //System.out.println("3) Allergy Menu\n");
             System.out.println("0) Exit Program\n");
             System.out.println("Please Enter Your Choice\n");
 
@@ -24,9 +25,9 @@ class Menu {
                     groupMenu();
                     break;
 
-                case 3:
+                /*case 3:
                     allergyMenu();
-                    break;
+                    break;*/
 
                 case 0:
                     exitApp();
@@ -134,9 +135,9 @@ class Menu {
         } while(userChoice != 0);
     }
 
-    private static void allergyMenu() {
+    /*private static void allergyMenu() {
 
-    }
+    }*/
 
     private static void defaultString(int userChoice) {
         System.out.println(userChoice + " is not a valid Menu option! Please select another.");
