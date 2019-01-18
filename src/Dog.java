@@ -7,12 +7,7 @@ public class Dog {
     // Unique 4 digit Identifier for each dog starting at 1000
     private int uid = 1000;
 
-    /*
-     *  Semi-binary number which represents the different groups that the dog belongs to
-     *  i.e.    101010
-     *          GroupA| GroupB | GroupC | Group N | GroupSmalls | Solo/Pair
-     *               1|    0   |    1   |    0    |     1       |   0
-     */
+     //  ArrayList with boolean values which represents the different groups that the dog belongs to
     private ArrayList<Boolean> group = new ArrayList<>();
 
     // Boolean whose value determines whether or not a dog has allergies
@@ -25,7 +20,7 @@ public class Dog {
         if (getAllergy()) {
             System.out.println(getDogName() + " has allergies.\n");
         }
-        else System.out.println("");
+        else System.out.println();
     }
 
     public String getDogName() {
@@ -67,15 +62,6 @@ public class Dog {
     @Override
     public String toString() {
         return getDogName();
-    }
-
-    public String getGroupString() {
-        StringBuilder groupString = new StringBuilder();
-        for (boolean y : this.group) {
-            groupString.append(y);
-        }
-
-        return groupString.toString();
     }
 
     private static int counter = 1000;

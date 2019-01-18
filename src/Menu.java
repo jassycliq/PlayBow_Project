@@ -1,4 +1,3 @@
-import java.awt.desktop.SystemSleepEvent;
 import java.util.Scanner;
 
 class Menu {
@@ -46,7 +45,7 @@ class Menu {
         int userChoice;
 
         do {
-            System.out.println("Dog Menu \n");
+            System.out.println("\nDog Menu \n");
             System.out.println("1) Add New Dog\n");
             System.out.println("2) Delete Dog\n");
             System.out.println("3) Display All Dogs\n");
@@ -76,7 +75,7 @@ class Menu {
                     break;
 
                 case 5:
-                    System.out.println("Opening Main Menu...\n");
+                    System.out.println("\nOpening Main Menu...\n");
                     menu();
                     break;
 
@@ -96,13 +95,13 @@ class Menu {
         int userChoice;
 
         do {
-            System.out.println("Group Menu \n");
+            System.out.println("\nGroup Menu \n");
             System.out.println("1) Add Dog To Group\n");
             System.out.println("2) Remove Dog From Group\n");
             System.out.println("3) Display Group List\n");
             System.out.println("4) Main Menu\n");
             System.out.println("0) Exit Program\n");
-            System.out.println("Please Enter Your Choice\n");
+            System.out.println("Please Enter Your Choice");
 
             userChoice = input.nextInt();
             switch (userChoice) {
@@ -120,7 +119,7 @@ class Menu {
                     break;
 
                 case 4:
-                    System.out.println("Opening Main Menu...\n");
+                    System.out.println("\nOpening Main Menu...\n");
                     menu();
                     break;
 
@@ -155,31 +154,31 @@ class Menu {
 
         Dog tempDog = new Dog();
 
-        System.out.println("Please enter dog's name.\n");
+        System.out.println("\nPlease enter dog's name.");
         dogName = input.nextLine();
         tempDog.setDogName(dogName);
         tempDog.setUID();
-        System.out.println("Enter Dog groups\n");
-        System.out.println("Is " + dogName + " in Group A?");
+        System.out.println("\nEnter Dog groups");
+        System.out.println("\nIs " + dogName + " in Group A?");
         boolean groupA = input.nextBoolean();
         tempDog.setGroup(groupA, 0);
-        System.out.println("Is " + dogName + " in Group B?\n");
+        System.out.println("\nIs " + dogName + " in Group B?");
         boolean groupB = input.nextBoolean();
         tempDog.setGroup(groupB, 1);
-        System.out.println("Is " + dogName + " in Group C?\n");
+        System.out.println("\nIs " + dogName + " in Group C?");
         boolean groupC = input.nextBoolean();
         tempDog.setGroup(groupC, 2);
-        System.out.println("Is " + dogName + " in Noah's Group?\n");
+        System.out.println("\nIs " + dogName + " in Noah's Group?");
         boolean groupN = input.nextBoolean();
         tempDog.setGroup(groupN, 3);
-        System.out.println("Is " + dogName + " in Smalls Group?\n");
+        System.out.println("\nIs " + dogName + " in Smalls Group?");
         boolean groupSmalls = input.nextBoolean();
         tempDog.setGroup(groupSmalls, 4);
-        System.out.println("Is " + dogName + " in Solo/Pair?\n");
+        System.out.println("\nIs " + dogName + " in Solo/Pair?");
         boolean groupSolo = input.nextBoolean();
         tempDog.setGroup(groupSolo, 5);
         Playgroup.setGroups(tempDog);
-        System.out.println("Does " + dogName + " have any allergies?\n");
+        System.out.println("\nDoes " + dogName + " have any allergies?");
         boolean hasAllergy = input.nextBoolean();
         tempDog.setAllergy(hasAllergy);
 
@@ -203,7 +202,7 @@ class Menu {
     private static void dogInfo() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Which dog's info do you want?\n");
+        System.out.println("\nWhich dog's info do you want?");
         String dogChoice = input.nextLine();
         for (int i = 0; i < DogList.dogList.size(); i++) {
             if (DogList.dogList.get(i).getDogName().equalsIgnoreCase(dogChoice)) {
@@ -217,7 +216,7 @@ class Menu {
 
         for (Dog dog : DogList.dogList) {
             if (dog.getDogName().equalsIgnoreCase(dogInput)) {
-                System.out.println("Found " + dogInput + "! \n");
+                System.out.println("\nFound " + dogInput + "! \n");
                 tempDog = dog;
                 break;
             }
@@ -229,13 +228,13 @@ class Menu {
     private static void addToGroup() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter the name of the dog you want to add");
+        System.out.println("\nPlease enter the name of the dog you want to add");
         String dogInput = input.nextLine();
 
         Dog tempDog = findDog(dogInput);
 
         if (tempDog != null) {
-            System.out.println("Which group do you want to add " + tempDog + " to? \n");
+            System.out.println("\nWhich group do you want to add " + tempDog + " to?");
             int userChoice;
 
             do {
@@ -280,19 +279,19 @@ class Menu {
                         break;
                 }
             } while (userChoice != 0);
-        } else System.out.println("Could not find " + dogInput + "! \n");
+        } else System.out.println("\nCould not find " + dogInput + "! \n");
     }
 
     private static void remFromGroup() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter the name of the dog you want to remove");
+        System.out.println("\nPlease enter the name of the dog you want to remove");
         String dogInput = input.nextLine();
 
         Dog tempDog = findDog(dogInput);
 
         if (tempDog != null) {
-            System.out.println("Which group do you want to remove " + tempDog + " from? \n");
+            System.out.println("\nWhich group do you want to remove " + tempDog + " from?");
             int userChoice;
 
             do {
@@ -332,14 +331,14 @@ class Menu {
                         break;
                 }
             } while (userChoice != 0);
-        } else System.out.println("Could not find " + dogInput + "! \n");
+        } else System.out.println("\nCould not find " + dogInput + "! \n");
     }
 
     private static void displayGroup() {
         Scanner input = new Scanner(System.in);
         int userChoice;
 
-        System.out.println("Which group do you want to list? \n");
+        System.out.println("\nWhich group do you want to list?");
 
         do {
             userChoice = getUserChoice(input);
@@ -379,7 +378,6 @@ class Menu {
             } while (userChoice != 0);
         }
 
-
     private static int getUserChoice(Scanner input) {
         int userChoice;
         System.out.println("1) Group A \n");
@@ -389,7 +387,7 @@ class Menu {
         System.out.println("5) Smalls Group \n");
         System.out.println("6) Solo/Pair \n");
         System.out.println("0) Go Back \n");
-        System.out.println("Please Enter Your Choice \n");
+        System.out.println("Please Enter Your Choice");
 
         userChoice = input.nextInt();
         return userChoice;

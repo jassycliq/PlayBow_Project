@@ -6,8 +6,4 @@ class DogList {
     static void addDogList(Dog dog) {
         dogList.add(dog);
     }
-
-    static ArrayList<Dog> getDogList() {
-        return dogList;
-    }
 }

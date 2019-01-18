@@ -18,46 +18,57 @@ class Playgroup {
      */
 
     static void getGroupA() {
+        System.out.println();
         for (Dog tempDog : groupA) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
 
     static void getGroupB() {
+        System.out.println();
         for (Dog tempDog : groupB) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
 
     static void getGroupC() {
+        System.out.println();
         for (Dog tempDog : groupC) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
 
     static void getGroupN() {
+        System.out.println();
         for (Dog tempDog : groupN) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
 
     static void getGroupSmalls() {
+        System.out.println();
         for (Dog tempDog : groupSmalls) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
 
     static void getGroupSolo() {
+        System.out.println();
         for (Dog tempDog : groupSolo) {
             System.out.println(tempDog.getDogName());
         }
+        System.out.println();
     }
-
-
 
     /*
      *  Methods to add new Dog objects to Playgroup ArrayLists
      */
+
     static void setGroups(Dog dog) {
         if (dog.getGroup().get(0)) {
             setGroupA(dog);
